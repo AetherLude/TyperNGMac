@@ -50,24 +50,27 @@ class TyperM(toga.App):
             return True
         else:
             logger.error("Accessibility permissions not granted")
-            self.main_window.info_dialog(
+            self.main_window = toga.MainWindow(title=self.formal_name, size=(800, 600), resizable=False)
+            self.main_window.show()
+            self.main_window.error_dialog(
                 "权限错误",
                 "应用程序需要访问辅助功能权限 (Accessibility权限) 才能正常运行。"
-                "请在系统偏好设置中启用此权限。"
-                "如果在启用权限后还是弹出此窗口，请在权限设置页面中移除TyperNGen后重新添加TyperNGen。"
+                "请在系统偏好设置中启用此权限。\n"
+                "如果在启用权限后还是弹出此窗口，请在权限设置页面中移除TyperNGen后重新添加TyperNGen。\n",
+                self.confirm_result
             )
             subprocess.call(["open", "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"])
+
             return False
+
+    def confirm_result(self, window, result):
+        self.main_window.close()
             
     def startup(self):
         """Construct and show the Toga application."""
         try:
-            self.main_window = toga.MainWindow(title=self.formal_name, size=(800, 600), resizable=False)
-            self.main_window.show()
             if not self.check_accessibility_permissions():
                 return
-
-            self.main_window.hide()
 
             main_box = toga.Box(style=Pack(direction=COLUMN, padding=10, flex=1))
             
