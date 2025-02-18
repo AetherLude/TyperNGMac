@@ -76,7 +76,7 @@ class TyperM(toga.App):
             
             # 创建标题标签
             title_label = toga.Label(
-                "TyperM - 键盘映射工具",
+                "TyperNGen - 键盘映射工具",
                 style=Pack(padding=(0, 0, 10, 0))
             )
             
@@ -245,9 +245,9 @@ class TyperM(toga.App):
                 logger.debug("Control + P pressed, toggling pause state")
                 self.is_paused = not self.is_paused
                 if self.is_paused:
-                    self.show_notification("TyperM", "映射已暂停")
+                    self.show_notification("键盘映射", "已暂停")
                 else:
-                    self.show_notification("TyperM", "映射已恢复")
+                    self.show_notification("键盘映射", "已恢复")
                 return None
 
             if self.is_paused:
@@ -275,7 +275,7 @@ class TyperM(toga.App):
             self.map_button.text = "开始映射"
             self.status_label.text = "映射已停止"
             self.main_window.show()
-            self.show_notification("TyperM", "映射已停止")
+            self.show_notification("键盘映射", "已停止")
             logger.debug("Mapping stopped")
 
             if self.quartz_listener:
