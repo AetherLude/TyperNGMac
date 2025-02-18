@@ -5,7 +5,7 @@ bundle = "cn.pinehouse"
 version = "0.1.1"
 url = "https://github.com/AetherLude/TyperNGMac"
 license.file = "LICENSE"
-author = "AetherLude"
+author = "PineHouse"
 author_email = "aetherlude@google.com"
 
 [tool.briefcase.app.typerngen]
