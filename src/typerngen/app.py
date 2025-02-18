@@ -147,9 +147,9 @@ class TyperM(toga.App):
                 logger.debug("Control + P pressed, toggling pause state")
                 self.is_paused = not self.is_paused
                 if self.is_paused:
-                    self.show_notification("TyperM", "映射已暂停")
+                    self.show_notification("键盘映射", "已暂停")
                 else:
-                    self.show_notification("TyperM", "映射已恢复")
+                    self.show_notification("键盘映射", "已恢复")
                 return
 
             if self.is_paused:
