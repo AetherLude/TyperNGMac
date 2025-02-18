@@ -3,7 +3,7 @@
 project_name = "TyperNGen"
 bundle = "cn.pinehouse"
 version = "0.1.1"
-url = "https://github.com/AL-Pinecore/TyperNGen"
+url = "https://github.com/AetherLude/TyperNGMac"
 license.file = "LICENSE"
 author = "AetherLude"
 author_email = "aetherlude@google.com"
